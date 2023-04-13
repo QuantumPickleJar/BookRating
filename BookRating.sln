@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRating", "BookRating\BookRating.csproj", "{9FA4E3C0-BA54-4900-BBAD-965809AA126A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRatingTests", "BookRatingTests\BookRatingTests.csproj", "{F52C0B47-D3A0-4802-9EFD-DF638889B287}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRatingTester", "BookRatingTester\BookRatingTester.csproj", "{4B298C21-D416-411D-A2C5-746548B24AD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9FA4E3C0-BA54-4900-BBAD-965809AA126A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9FA4E3C0-BA54-4900-BBAD-965809AA126A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9FA4E3C0-BA54-4900-BBAD-965809AA126A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9FA4E3C0-BA54-4900-BBAD-965809AA126A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F52C0B47-D3A0-4802-9EFD-DF638889B287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F52C0B47-D3A0-4802-9EFD-DF638889B287}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F52C0B47-D3A0-4802-9EFD-DF638889B287}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F52C0B47-D3A0-4802-9EFD-DF638889B287}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2E5F259D-0572-4050-8A5B-6F01093E82DD}
 	EndGlobalSection
 EndGlobal
