@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -122,21 +123,69 @@ namespace BookRating
             return youngestBook;
         }
 
-        public List<Book> SortedByAuthor(bool sortDirection)
+        public List<Book> SortedByAuthor(bool sortDirection = false)
         {
-            throw new NotImplementedException();
+            allBooks.Sort();
+
+            if (!sortDirection)
+            {
+                // List<T>.Sort() always sorts Ascending, so if we need to flip it...
+                // sort DESCENDING
+                allBooks.Reverse();
+            }
+            return allBooks;
         }
 
-         
 
-        public List<Book> AboveRating(double rating)
+        public List<Book> AboveRating(double rating, string targetAuthor)
         {
-            throw new NotImplementedException();
+            // Return an Enumerable eq
+            allBooks.Where(book =>
+                book.Author == targetAuthor).ToList();
+
+
+            return allBooks.Where(b => 
+            b.Rating >= rating).ToList();
         }
 
         public List<Book> SortedByAuthorYear(bool sortDirection)
         {
-            throw new NotImplementedException();
+            allBooks = SortedByAuthor(sortDirection);
+            // do we need to implement another CompareTo that uses year instead of the 
+            //EqualityComparer<Book>.Default
+
+            
+            for (int i = 1; i < allBooks.Count; i++)
+            {
+                // if the i-th book was published more recently than book at index 0..
+                if (sortDirection)
+                {
+
+                    // Take the largest year between 0-th year and i-th year
+                    if (Math.Max(allBooks[i].Year, allBooks[0].Year) == allBooks[i].Year)
+                    {
+                        /// update it
+                        Book temp = allBooks[0];
+                        allBooks[0] = allBooks[i];
+                        allBooks[i] = temp;
+                    }
+
+                }
+                else
+                {
+                    if (allBooks[i].Year < allBooks[0].Year)
+                    {
+                        /// update it
+                        Book temp = allBooks[0];
+                        allBooks[0] = allBooks[i];
+                        allBooks[i] = temp;
+                    }
+
+                }
+
+            }
+
+            return allBooks;
         }
     }
 }
