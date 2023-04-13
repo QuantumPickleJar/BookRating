@@ -136,7 +136,6 @@ namespace BookRating
             return allBooks;
         }
 
-
         public List<Book> AboveRating(double rating, string targetAuthor)
         {
             // Return an Enumerable eq
